@@ -8,9 +8,9 @@ const checkInput = (e) => {
     e.currentTarget.value.length !==
     Number(textInput.getAttribute("data-length"))
   ) {
-    return textInput.classList.add("invalid");
+    textInput.classList.add("invalid");
   }
-  return textInput.classList.add("valid");
+  textInput.classList.add("valid");
 };
 
 textInput.addEventListener("change", checkInput);

@@ -1,9 +1,9 @@
 const catigor = document.querySelector('ul').children.length;
-
 console.log(`В списке ${catigor} категории.`);
-const ulRef = Array.from(document.querySelector('#categories').children);
-for (const elem of ulRef) {
-    const category = elem.firstElementChild.textContent;   
-    const quantityElem = elem.lastElementChild.children.length;
-    console.log(`Категория: ${category} \nКоличество элементов: ${quantityElem}`);
-};
+const ulRef = document.querySelectorAll('li.item');
+ulRef.forEach((elem) => {
+    let title = elem.firstElementChild.textContent;
+    console.log(`Категория: ${title}`);
+    let quantity = elem.lastElementChild.children.length;
+    console.log(`Количество элементов: ${quantity}`)
+});

@@ -32,15 +32,11 @@ const images = [
 // imageList.prepend(...items);
 // imageList.classList.add('gallery');
 
-const listEl = document.querySelector("#gallery");
-
-const createGalleryItem = (item) => {
-  const { url, alt } = item;
-  return `<li><img src="${url}" alt="${alt}" width="300" height="200"></li>`;
-};
-
-const makeGaleryItems = images.map(createGalleryItem);
-
-listEl.insertAdjacentHTML("beforeend", makeGaleryItems);
-
-listEl.classList.add("list");
+const createGalleryRef = el => {
+	const { url, alt } = el;
+	return `<li><img src="${url}" alt="${alt}" width="300" height="200"></li>`;}
+const makeImagesTemplates = images.map(createGalleryRef).join('');
+createGalleryRef(makeImagesTemplates);
+const listRef = document.querySelector('#gallery');
+listRef.insertAdjacentHTML('beforeend', makeImagesTemplates);
+listRef.classList.add('list');
